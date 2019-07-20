@@ -24,23 +24,15 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
-
     login(username: string, password: string) {
-        let headers = new HttpHeaders({
-            'Content-Type': 'application/json'});
-        let options = { headers: headers };    
 
-        console.log("Recieved parameters "+username, password);
-        
-        return this.http.post<any>(`${environment.apiUrl}/users/authenticate`,
-                { username, password })
-
+        return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, {username, password})
             .pipe(map(user => {
-                // login successful if there's a jwt token in the response
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    //localStorage.setItem('currentUser', JSON.stringify(user));
+                if (user && user.token) {  
                     this.currentUserSubject.next(user);
+                }else {
+
+                    console.log("User object is null");
                 }
                 return user;
             })); 
