@@ -416,9 +416,15 @@
         }
       }
     },
+<<<<<<< HEAD
     "module-lazyload": {
       "root": "projects/module-lazyload/",
       "sourceRoot": "projects/module-lazyload/src",
+=======
+    "reactive-form-example": {
+      "root": "projects/reactive-form-example/",
+      "sourceRoot": "projects/reactive-form-example/src",
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -426,6 +432,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/module-lazyload",
             "index": "projects/module-lazyload/src/index.html",
             "main": "projects/module-lazyload/src/main.ts",
@@ -444,14 +451,34 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
 
+=======
+            "outputPath": "dist/reactive-form-example",
+            "index": "projects/reactive-form-example/src/index.html",
+            "main": "projects/reactive-form-example/src/main.ts",
+            "polyfills": "projects/reactive-form-example/src/polyfills.ts",
+            "tsConfig": "projects/reactive-form-example/tsconfig.app.json",
+            "assets": [
+              "projects/reactive-form-example/src/favicon.ico",
+              "projects/reactive-form-example/src/assets"
+            ],
+            "styles": [
+              "projects/reactive-form-example/src/styles.css"
+            ],
+            "scripts": [],
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
             "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
+<<<<<<< HEAD
                   "replace": "projects/module-lazyload/src/environments/environment.ts",
                   "with": "projects/module-lazyload/src/environments/environment.prod.ts"
+=======
+                  "replace": "projects/reactive-form-example/src/environments/environment.ts",
+                  "with": "projects/reactive-form-example/src/environments/environment.prod.ts"
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
                 }
               ],
               "optimization": true,
@@ -476,23 +503,36 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "module-lazyload:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "module-lazyload:build:production"
+=======
+            "browserTarget": "reactive-form-example:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "reactive-form-example:build:production"
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "module-lazyload:build"
+=======
+            "browserTarget": "reactive-form-example:build"
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+<<<<<<< HEAD
             "main": "projects/module-lazyload/src/test.ts",
             "polyfills": "projects/module-lazyload/src/polyfills.ts",
             "tsConfig": "projects/module-lazyload/tsconfig.spec.json",
@@ -504,6 +544,19 @@
             "assets": [
               "projects/module-lazyload/src/favicon.ico",
               "projects/module-lazyload/src/assets"
+=======
+            "main": "projects/reactive-form-example/src/test.ts",
+            "polyfills": "projects/reactive-form-example/src/polyfills.ts",
+            "tsConfig": "projects/reactive-form-example/tsconfig.spec.json",
+            "karmaConfig": "projects/reactive-form-example/karma.conf.js",
+            "styles": [
+              "projects/reactive-form-example/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/reactive-form-example/src/favicon.ico",
+              "projects/reactive-form-example/src/assets"
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
             ]
           }
         },
@@ -511,8 +564,13 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
+<<<<<<< HEAD
               "projects/module-lazyload/tsconfig.app.json",
               "projects/module-lazyload/tsconfig.spec.json"
+=======
+              "projects/reactive-form-example/tsconfig.app.json",
+              "projects/reactive-form-example/tsconfig.spec.json"
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
             ],
             "exclude": [
               "**/node_modules/**"
@@ -520,7 +578,11 @@
           }
         }
       }
+<<<<<<< HEAD
     }
+=======
+    }   
+>>>>>>> 34d6afe09d700e8114b775aafe0dedd11a928a1b
   },
   "defaultProject": "qep"
 }
