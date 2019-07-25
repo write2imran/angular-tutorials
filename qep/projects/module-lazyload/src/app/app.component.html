@@ -1,0 +1,12 @@
+<p>
+    <button type="button" class="btn btn-primary" [routerLink]="['/mod1']" >Load Module 1</button>
+    <button type="button" class="btn btn-secondary" [routerLink]="['/mod2']">Load Module 2</button>
+    <button type="button" class="btn btn-success" [routerLink]="['/mod3']">Load Module 3</button>
+</p>
+
+<div>
+    Open Browser Devtool and watch network tab 
+      <br>"modules-mod1-mod1-module.js", <br>"modules-mod3-mod3-module.js" <br>and "modules-mod3-mod3-module.js" loading on <b>click!</b>
+</div>
+
+<router-outlet></router-outlet>

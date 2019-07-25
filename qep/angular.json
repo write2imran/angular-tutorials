@@ -415,6 +415,111 @@
           }
         }
       }
+    },
+    "module-lazyload": {
+      "root": "projects/module-lazyload/",
+      "sourceRoot": "projects/module-lazyload/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/module-lazyload",
+            "index": "projects/module-lazyload/src/index.html",
+            "main": "projects/module-lazyload/src/main.ts",
+            "polyfills": "projects/module-lazyload/src/polyfills.ts",
+            "tsConfig": "projects/module-lazyload/tsconfig.app.json",
+            "assets": [
+              "projects/module-lazyload/src/favicon.ico",
+              "projects/module-lazyload/src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/module-lazyload/src/environments/environment.ts",
+                  "with": "projects/module-lazyload/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "module-lazyload:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "module-lazyload:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "module-lazyload:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/module-lazyload/src/test.ts",
+            "polyfills": "projects/module-lazyload/src/polyfills.ts",
+            "tsConfig": "projects/module-lazyload/tsconfig.spec.json",
+            "karmaConfig": "projects/module-lazyload/karma.conf.js",
+            "styles": [
+              "projects/module-lazyload/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/module-lazyload/src/favicon.ico",
+              "projects/module-lazyload/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/module-lazyload/tsconfig.app.json",
+              "projects/module-lazyload/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "qep"
